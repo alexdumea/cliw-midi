@@ -178,3 +178,9 @@ body {
     }
 }
 
+/*canvas*/
+#canvas {
+    border: 1px solid black;
+    width: 85%;
+    margin-right: 18px;
+}

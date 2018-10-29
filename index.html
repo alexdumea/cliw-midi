@@ -3,10 +3,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <script src="js/audio.js"></script>
+    <script src="js/canvas.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body onload='draw()'>
     <div class="container">
         <div class="piano">
             <!--Controls-->
@@ -54,7 +55,7 @@
                 </div>
             </div>
             <!--Keyboard-->
-            <div class="keyboard">
+            <div class="keyboard"  onclick="showCoords(event)">
                 <div data-note="c4" data-key="81" class="key white oct">q</div>
                 <div data-note="db4" data-key="50" class="key black black1 oct">2</div>
                 <div data-note="d4" data-key="87" class="key white oct">w</div>
@@ -82,9 +83,9 @@
                 <div data-note="c6" data-key="190" class="key white">.</div>
             </div>
         </div>
+        <canvas id='canvas'></canvas>
     </div>
-    <div class="maybecanvas">
-
+    <p id='showCoords'></p>
     </div>
 </body>
 </html>
