@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body prefix="schema: http://schema.org">
+  <article typeof="schema:ScholarlyArticle" resource="#">
+  <header>
+      <h1>MIORC (midi orchestra)</h1>
+    </header>
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Dumea Alexandru, Atodiresei Ioana
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Subcategorii" id="cuprins">
+      <h2>Cuprins</h2>
+      <aside typeof="schema:WPSideBar">
+        <p>
+        <ul>
+          <li><a href="#abstract">1. Abstract</a></li>
+          <li><a href="#introduction">2. Introducere</a></li>
+          <li><a href="#design">3. Idei/concepte importante privind designul general</a></li>
+          <li><a href="#interaction">4. Maniera de interacţiune cu utilizatorul</a></li>
+          <li><a href="#manage">5. Maniera de folosire a sistemului de management al codului-sursă</a></li>
+        </ul>
+        <!--</p>-->
+      </aside>
+    </section>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        Scurta prezentare a proiectului numarul 17 MIORC (midi orchestra).Idei generale , prototipuri si schite.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introducere</h2>
+      <p>
+        Să se implementeze o aplicaţie Web care permite formarea unei orchestre on-line.
+        "Cântăreţii" vor putea să-şi aleagă un instrument preferat dintr-o colecţie de minim N instrumente <a href="https://github.com/mudcube/MIDI.js/">MIDI</a> disponibile (e.g. N=3).
+        Sistemul oferit va putea permite crearea unor "concerte" în care formaţiile vor fi compuse din interpreţi selectaţi de utilizator ori aleşi aleatoriu.
+        Fiecărui instrument i se vor putea ajusta atribute precum sursa melodiei MIDI, volumul, numărul de secvenţe muzicale redate etc.
+        Inspiraţie: <a href="https://onlinesequencer.net/">OnlineSequencer</a>, <a href="https://1j01.github.io/guitar/">Guitar Recorder</a>
+        , <a href="http://www.caseyrule.com/projects/piano/">Online Virtual MIDI Keyboard</a>.
+      </p>
+    </section>
+    <section id="design">
+      <!-- review? -->
+      <h2>Design</h2>
+      <p>
+        In principal s-a urmarit un design inspirat din <a href="https://onlinesequencer.net/">OnlineSequencer</a>
+      </p>
+      <section id="menu">
+        <h3>Meniul Principal</h3>
+        <p>
+          Meniul principal contine cateva butoane de redare (Start | Stop | Register | Help). Pe langa acestea cateva inputuri
+          pentru mixerul audio.Dar si optiunea de a schimba instrumentul de redare.
+        </p>
+        <img src="img/menu.png" alt="menu" width="100%">
+      </section>
+      <section id="keyboard">
+        <h3>Clapetele</h3>
+        <p>
+          In partea stanga se afla clapetele.
+        </p>
+        <img src="img/keyboard.png" alt="menu" width="100%">
+        <p>
+          Apasand butonul help din meniu, pe clapete apar mapate si butoanele cu care se pot reda sunetele si de la tatatura, astfel tasta
+          `q` corespunde primei clapete , tasta 2 , clapetei urmatoare , etc.
+        </p>
+        <img src="img/help.png" alt="menu" width="100%">
+      </section>
+      <section id="main">
+        <h3>Privire de ansamblu</h3>
+        <img src="img/main.png" alt="menu" width="100%">
+        <img src="img/preview.png" alt="menu" width="100%">
+      </section>
+      <section id="prototype">
+        <h3>Prototip</h3>
+        <p>
+          Abandonat deoarece trecand peste un numar de note , canvas-ul devenea greu de urmarit, iar meniul era unul minimal.
+        </p>
+        <img src="img/prototype.jpg" alt="menu" width="100%">
+      </section>
+    </section>
+    <section id="interaction">
+      <!-- review? -->
+      <h2>Interactiunea cu utilizatorul:</h2>
+
+      <section id="buttons">
+        <h3>Meniul</h3>
+        <p>Play/Pause - redare/oprire note muzicale aflate pe elementul de redare grafica (Canvas)</p>
+        <p>Record - Inregistrare compozitie</p>
+        <p>Stop - Oprirea inregistrarii si salvarea compozitiei</p>
+        <p>Help - Afisarea caracterelor mapate de tastatura</p>
+        <p>Se vor mai implementa cateva butoane cu rolul de alterare a sunetelor</p>
+      </section>
+      <section id="keyboard-key">
+        <!-- review? -->
+        <h3>Keyboard:</h3>
+        <p>
+          Sunetele pot fi redate fie dand click cu mouse-ul pe clapete , fie cu butoanele mapate de la tastatura.
+        </p>
+      </section>
+      <section id="canvas">
+        <!-- review? -->
+        <h3>Canvas:</h3>
+        <p>
+          Aici se pot selecta diferite note muzicale , dand click cu mouse-ul direct pe elementul de redare grafica. Dublu click , iar nota v-a fi stearsa.
+        </p>
+      </section>
+    </section>
+    <section id="manage" role="cod-manage">
+      <!-- review? -->
+      <h2>Management Cod</h2>
+      <p>
+        Codul este dispoibil pe <a href="https://github.com/alexdumea/cliw-midi">github</a>.
+      </p>
+    </section>
+  </article>
+  </body>
+</html>

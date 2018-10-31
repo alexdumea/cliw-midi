@@ -35,13 +35,11 @@ Grid.prototype.drawGrid = function(cellWidth, cellBeatLength) {
     }
 
     for(var j = 0; j < numRows; j++) {
-            this.context.strokeStyle = '#6E6E6E';
+        this.context.strokeStyle = '#6E6E6E';
         this.context.beginPath();
         this.context.moveTo(0, j * this.cellHeight);
         this.context.lineTo(this.width, j * this.cellHeight);
         this.context.stroke();
-
-        this.context.fillStyle = '#000';
     }
 };
 
@@ -50,5 +48,5 @@ var initialize = function() {
     var height = window.innerHeight - 40 - counterHeight - 20;
     document.getElementById('grid-container').style.height = height + "px";
     this.grid = new Grid();
-    this.grid.drawGrid(100, 100);
+    this.grid.drawGrid(100, 1);
 };

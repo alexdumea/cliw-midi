@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <script src="js/audio.js"></script>
     <script src="js/canvas.js"></script>
-    <script type="application/javascript">
+    <script>
         function start() {
             initialize();
             document.getElementById("grid-container").onscroll = function() {
@@ -13,9 +13,12 @@
         }
     </script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Midi</title>
 </head>
 <body onload='start()'>
+    <div class="first-menu">
+        Midi orchestra simulator
+    </div>
     <div class="container">
         <div class="menu">
             <div class="box-label">
@@ -49,12 +52,11 @@
                 </div>
             </div>
             <div class="box-label">
-                Instrument:
+                Menu:
                 <div class="box-input">
                     <select>
-                        <option value="piano">Piano</option>
-                        <option value="quitar">Guitar</option>
-                        <option value="bass">Bass</option>
+                        <option value="save">Save</option>
+                        <option value="save_as">Save as</option>
                     </select>
                 </div>
             </div>
@@ -102,6 +104,9 @@
                 <canvas id="canvas-grid" width="3200" height="674"></canvas>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        @footer
     </div>
 </body>
 </html>

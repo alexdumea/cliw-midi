@@ -1,0 +1,9 @@
+
+fjavascript:UnusedVariable*"5Remove the declaration of the unused 'play' variable.(àË„Àıÿÿÿÿ8Ï¯éŠì,
+gjavascript:UnusedVariable)"6Remove the declaration of the unused 'pause' variable.(öÔÕÊùÿÿÿÿ8Ï¯éŠì,
+cjavascript:UnusedVariable("7Remove the declaration of the unused 'record' variable.(Ç¿Í¾8Ï¯éŠì,
+`javascript:S1854)"8Remove this useless assignment to local variable "pause"(öÔÕÊùÿÿÿÿ8Ï¯éŠì,
+[javascript:S1854/"8Remove this useless assignment to local variable "tempo"(á–¨À8Ï¯éŠì,
+[javascript:S1854e"8Remove this useless assignment to local variable "tempo"(Á‰î8Ï¯éŠì,
+_javascript:S1854*"7Remove this useless assignment to local variable "play"(àË„Àıÿÿÿÿ8Ï¯éŠì,
+\javascript:S1854("9Remove this useless assignment to local variable "record"(Ç¿Í¾8Ï¯éŠì,
