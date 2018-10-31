@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function(){
         ["e6", 1318.51]
     ];
 
-    const tempoInput = document.querySelector('.tempo');
     const volumeInput = document.querySelector('.volume');
     const blackKey = Array.from(document.querySelectorAll('.black'));
     const whiteKey = Array.from(document.querySelectorAll('.white'));
@@ -43,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function(){
     const help = document.querySelector('.help');
     const key = Array.from(document.querySelectorAll('.key'));
     let volume = 0.5;
-    //Lower value = faster speed
-    let tempo = 5;
 
     //Create new audio context when note played
     function playNote(note, length) {
@@ -97,9 +94,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     //input handlers
-    function updateTempo(e){
-        tempo = e.target.value;
-    }
     function updateVolume(e){
         volume = e.target.value;
     }
@@ -142,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function(){
         key.addEventListener('click', onClickPlay);
     })
     window.addEventListener('keydown', keyDownSearch);
-    tempoInput.addEventListener('change', updateTempo);
     volumeInput.addEventListener('change', updateVolume);
 
     //Hide keyboard help letters on load

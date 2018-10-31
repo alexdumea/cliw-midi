@@ -4,58 +4,72 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <script src="js/audio.js"></script>
     <script src="js/canvas.js"></script>
+    <script type="application/javascript">
+        function start() {
+            initialize();
+            document.getElementById("grid-container").onscroll = function() {
+                document.getElementById("measure-counter-container").scrollLeft = this.scrollLeft;
+            };
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body onload='draw()'>
+<body onload='start()'>
     <div class="container">
-        <div class="piano">
-            <!--Controls-->
-            <div class="controls-container">
-                <div class="controls">
-                    <div class="input-container">
-                        <h2></h2>
-                        <div class="input-buttons">
-                            <div class="menu-buttons">
-                                <div>
-                                    <button class="record">Record</button>
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <button class="pause">Pause</button>
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <button class="play">Play</button>
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <button class="help">Help</button>
-                                    <div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-container">
-                        <input type="range" class="volume" step="0.1" min="0" max="1"></input>
-                        <input type="range" class="tempo" min="2" max="8"></input>
-                    </div>
-                    <div class="input-labels">
-                        <div></div>
-                        <div></div>
-                    </div>
+        <div class="menu">
+            <div class="box-label">
+                BPM
+                <div class="box-input">
+                    <input type="text" id="bpm" size="3" maxlength="3" value="100">
                 </div>
-                <div class="instruments">
-                    <select name="instruments">
+            </div>
+            <div class="player">
+                <img src="img/play2.png" alt="play">
+                <img src="img/stop2.png" alt="stop">
+                <img src="img/record2.png" alt="record">
+            </div>
+            <div class="help">
+                <img src="img/help.png" alt="help">
+            </div>
+            <div class="box-label">
+                Title
+                <div class="box-input">
+                    <input type="text" id="title" size="32" maxlength="128" value="Untitled">
+                </div>
+            </div>
+            <div class="box-label">
+                Instrument:
+                <div class="box-input">
+                    <select>
                         <option value="piano">Piano</option>
-                        <option value="violin">Violin</option>
-                        <option value="guitar">Guitar</option>
+                        <option value="quitar">Guitar</option>
                         <option value="bass">Bass</option>
                     </select>
                 </div>
             </div>
+            <div class="box-label">
+                Instrument:
+                <div class="box-input">
+                    <select>
+                        <option value="piano">Piano</option>
+                        <option value="quitar">Guitar</option>
+                        <option value="bass">Bass</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="beat">
+
+        </div>
+        <div id="measure-counter-container">
+            <div id="measure-counter">
+                <canvas id="measure-counter-canvas" width="3200" height="25"></canvas>
+            </div>
+        </div>
+        <div class="piano">
             <!--Keyboard-->
-            <div class="keyboard"  onclick="showCoords(event)">
+            <div class="keyboard">
                 <div data-note="c4" data-key="81" class="key white oct">q</div>
                 <div data-note="db4" data-key="50" class="key black black1 oct">2</div>
                 <div data-note="d4" data-key="87" class="key white oct">w</div>
@@ -83,9 +97,11 @@
                 <div data-note="c6" data-key="190" class="key white">.</div>
             </div>
         </div>
-        <canvas id='canvas'></canvas>
-    </div>
-    <p id='showCoords'></p>
+        <div id="grid-container" class="grid-canvas">
+            <div id="grid">
+                <canvas id="canvas-grid" width="3200" height="674"></canvas>
+            </div>
+        </div>
     </div>
 </body>
 </html>
